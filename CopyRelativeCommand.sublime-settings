@@ -1,0 +1,10 @@
+{
+    "languages": {
+        // "php": [
+        //     {
+        //         "glob": "**Test.php",
+        //         "command": ["vendor/bin/phpunit", "{relative_path}", "--filter={function}"]
+        //     }
+        // ]
+    }
+}

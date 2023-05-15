@@ -1,0 +1,15 @@
+[
+    {
+        "caption": "Copy Relative Command: Copy",
+        "command": "copy_relative_command"
+    },
+    {
+        "args":
+        {
+            "base_file": "${packages}/CopyRelativeCommand/CopyRelativeCommand.sublime-settings",
+            "default": "{\n\t$0\n}\n"
+        },
+        "caption": "Preferences: CopyRelativeCommand Settings",
+        "command": "edit_settings"
+    }
+]
