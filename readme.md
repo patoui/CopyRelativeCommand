@@ -59,20 +59,20 @@ Within terminal:
     </thead>
     <tbody>
         <tr>
-            <td>`languages`</td>
+            <td><code>languages</code></td>
             <td>N/A</td>
-            <td>Contains a dictionary of all configured languages commands (e.g. `php`, `go`, `python`) and has a special value of `*` to apply to all languages</td>
+            <td>Contains a dictionary of all configured languages commands (e.g. <code>php</code>, <code>go</code>, <code>python</code>) and has a special value of <code>*<code> to apply to all languages</td>
         </tr>
         <tr>
-            <td>`glob`</td>
-            <td>`languages.*`</td>
+            <td><code>glob<code></td>
+            <td><code>languages.*<code></td>
             <td>contains a Unix filename pattern to identify which files the current command applies to (see <a href="https://docs.python.org/3/library/fnmatch.html">fnmatch</a> and <a href="https://en.wikipedia.org/wiki/Glob_(programming)) for more details">glob</a>)</td>
         </tr>
         <tr>
-            <td>`command`</td>
-            <td>`languages.*`</td>
+            <td><code>command</code></td>
+            <td><code>languages.*</code></td>
             <td>
-                a list (array) of strings which represent the command to be run. The `command` key has a few helper values:
+                a list (array) of strings which represent the command to be run. The <code>command</code> key has a few helper values:
                 <ul>
                     <li><code>{relative_path}</code> will get the shortest relative path to the current file</li>
                     <li><code>{current_function}</code> will get the current function which the cursor is in, defaults to an empty string if it's unable to determine the current function</li>
