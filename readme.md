@@ -61,10 +61,10 @@ Within terminal:
         <tr>
             <td><code>languages</code></td>
             <td>N/A</td>
-            <td>Contains a dictionary of all configured languages commands (e.g. <code>php</code>, <code>go</code>, <code>python</code>) and has a special value of <code>*<code> to apply to all languages</td>
+            <td>Contains a dictionary of all configured languages commands (e.g. <code>php</code>, <code>go</code>, <code>python</code>) and has a special value of <code>*</code> to apply to all languages</td>
         </tr>
         <tr>
-            <td><code>glob<code></td>
+            <td><code>glob</code></td>
             <td><code>languages.*</code></td>
             <td>contains a Unix filename pattern to identify which files the current command applies to (see <a href="https://docs.python.org/3/library/fnmatch.html">fnmatch</a> and <a href="https://en.wikipedia.org/wiki/Glob_(programming)) for more details">glob</a>)</td>
         </tr>
