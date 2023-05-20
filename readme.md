@@ -66,7 +66,7 @@ Within terminal:
         <tr>
             <td><code>glob</code></td>
             <td><code>languages.*</code></td>
-            <td>contains a Unix filename pattern to identify which files the current command applies to (see <a href="https://docs.python.org/3/library/fnmatch.html">fnmatch</a> and <a href="https://en.wikipedia.org/wiki/Glob_(programming)) for more details">glob</a>)</td>
+            <td>contains a Unix filename pattern to identify which files the current command applies to (see <a href="https://docs.python.org/3/library/fnmatch.html">fnmatch</a> and <a href="https://en.wikipedia.org/wiki/Glob_(programming)">glob</a>)</td>
         </tr>
         <tr>
             <td><code>command</code></td>
