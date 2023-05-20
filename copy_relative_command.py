@@ -1,7 +1,6 @@
 import sublime, sublime_plugin
 from os.path import relpath
-import json
-import fnmatch
+from fnmatch import fnmatch
 
 class CopyRelativeCommandCommand(sublime_plugin.TextCommand):
     def run(self, edit):
@@ -22,7 +21,7 @@ class CopyRelativeCommandCommand(sublime_plugin.TextCommand):
                     command_parts = command.get('command')
                     glob_pattern = command.get('glob', '*')
 
-                    if fnmatch.fnmatch(relative_path, glob_pattern):
+                    if fnmatch(relative_path, glob_pattern):
                         command = ''
                         for part in command_parts:
                             if '{' in part:
@@ -58,8 +57,31 @@ class CopyRelativeCommandCommand(sublime_plugin.TextCommand):
 
         return syntax.name.lower()
 
-    def get_setting(self, setting_name, default_value=None):
+    def __load_settings(self):
+        project_data = sublime.active_window().project_data()
+        project_settings = {}
+
+        if 'CopyRelativeCommand' in project_data:
+            project_settings = project_data['CopyRelativeCommand']
+
         settings = sublime.load_settings("CopyRelativeCommand.sublime-settings")
+
+        if 'languages' not in project_settings:
+            return settings
+
+        temp_languages = settings.get('languages')
+        project_languages = project_settings['languages']
+
+        # merge the language settings, favouring project settings
+        for key in project_languages:
+            temp_languages[key] = project_languages[key]
+
+        settings.set('languages', temp_languages)
+
+        return settings
+
+    def get_setting(self, setting_name, default_value=None):
+        settings = self.__load_settings()
         return settings.get(setting_name, default_value)
 
     def get_current_function_or_class(self):
