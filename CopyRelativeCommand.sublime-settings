@@ -3,7 +3,23 @@
         // "php": [
         //     {
         //         "glob": "**Test.php",
-        //         "command": ["vendor/bin/phpunit", "{relative_path}", "--filter={function}"]
+        //         "command": [
+        //             "vendor/bin/phpunit",
+        //             "{relative_path}",
+        //             "--filter={current_function_or_class}"
+        //         ]
+        //     },
+        //     {
+        //         "glob": "*",
+        //         "command": ["php -l {relative_path}"],
+        //     },
+        // ],
+        // "go": [
+        //     {
+        //         "glob": "*",
+        //         "command": [
+        //             "go run main.go"
+        //         ]
         //     }
         // ]
     }
