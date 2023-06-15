@@ -82,3 +82,38 @@ Within terminal:
         </tr>
     </tbody>
 </table>
+
+## Project Settings 📽️
+
+- Open your project settings
+    - edit existing project settings "Project: Edit Project"
+    - create new project settings "Project: Save As"
+- Add the same settings as you would in your general settings under the `CopyRelativeCommand` key
+```
+{
+    "folders":
+    [
+        {
+            "path": "."
+        }
+    ],
+    "CopyRelativeCommand": {
+        "languages": {
+            "php": [
+                {
+                    "glob": "**Test.php",
+                    "command": [
+                        "vendor/bin/phpunit",
+                        "{relative_path}",
+                        "--filter={current_function_or_class}"
+                    ]
+                },
+                {
+                    "glob": "*",
+                    "command": ["php -l {relative_path}"],
+                },
+            ]
+        }
+    },
+}
+```
