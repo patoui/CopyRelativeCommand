@@ -4,12 +4,12 @@
             {
                 "children": [
                     {
-                        "caption": "CopyRelativeCommand",
+                        "caption": "Copy Relative Command",
                         "children": [
                             {
                                 "args":
                                 {
-                                    "base_file": "${packages}/CopyRelativeCommand/CopyRelativeCommand.sublime-settings",
+                                    "base_file": "${packages}/CopyRelativeCommand/Copy Relative Command.sublime-settings",
                                     "default": "{\n\t$0\n}\n"
                                 },
                                 "caption": "Settings",

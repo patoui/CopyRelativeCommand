@@ -7,7 +7,7 @@ A helpful command to copy a command to the clipboard based on configured setting
 Within Sublime Text:
 - open the command palette (Windows/Linux: Ctrl + Shift + P, MacOS: Cmd + Shift + P)
 - search for "Package Control: Install Package" and press enter
-- search for "CopyRelativeCommand" and press enter on the mactching entry
+- search for "Copy Relative Command" and press enter on the mactching entry
 
 ### Alternative installation 💻️
 
@@ -18,7 +18,7 @@ Within terminal:
 
 ## Quick start 🚀️
 
-1. open command palette and search for "CopyRelativeCommand Settings"
+1. open command palette and search for "Copy Relative Command Settings"
 2. add language settings, example:
 ```json
 {
@@ -40,7 +40,7 @@ Within terminal:
     }
 }
 ```
-3. execute `CopyRelativeCommand` within the configured language, such as a `php` file in our above example:
+3. execute `Copy Relative Command` within the configured language, such as a `php` file in our above example:
     - if the open file (active view) is a file named `test/Unit/ExampleTest.php` and the cursor is within a function name `test_it_should_be_true`, the command copied to the clipboard would be:
         - `vendor/bin/phpunit test/Unit/ExampleTest.php --filter=test_it_should_be_true`
     - if the open file (active view) is a file named `app/Http/Controllers/UserController.php` the command copied to the clipboard would be:
@@ -88,7 +88,7 @@ Within terminal:
 - Open your project settings
     - edit existing project settings "Project: Edit Project"
     - create new project settings "Project: Save As"
-- Add the same settings as you would in your general settings under the `CopyRelativeCommand` key
+- Add the same settings as you would in your general settings under the `Copy Relative Command` key
 ```
 {
     "folders":
@@ -97,23 +97,25 @@ Within terminal:
             "path": "."
         }
     ],
-    "CopyRelativeCommand": {
-        "languages": {
-            "php": [
-                {
-                    "glob": "**Test.php",
-                    "command": [
-                        "vendor/bin/phpunit",
-                        "{relative_path}",
-                        "--filter={current_function_or_class}"
-                    ]
-                },
-                {
-                    "glob": "*",
-                    "command": ["php -l {relative_path}"],
-                },
-            ]
+    "settings": {
+        "Copy Relative Command": {
+            "languages": {
+                "php": [
+                    {
+                        "glob": "**Test.php",
+                        "command": [
+                            "vendor/bin/phpunit",
+                            "{relative_path}",
+                            "--filter={current_function_or_class}"
+                        ]
+                    },
+                    {
+                        "glob": "*",
+                        "command": ["php -l {relative_path}"],
+                    },
+                ]
+            }
         }
-    },
+    }
 }
 ```

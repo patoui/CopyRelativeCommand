@@ -6,10 +6,10 @@
     {
         "args":
         {
-            "base_file": "${packages}/CopyRelativeCommand/CopyRelativeCommand.sublime-settings",
+            "base_file": "${packages}/CopyRelativeCommand/Copy Relative Command.sublime-settings",
             "default": "{\n\t$0\n}\n"
         },
-        "caption": "Preferences: CopyRelativeCommand Settings",
+        "caption": "Preferences: Copy Relative Command Settings",
         "command": "edit_settings"
     }
 ]

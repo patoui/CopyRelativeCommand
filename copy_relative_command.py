@@ -42,7 +42,7 @@ class CopyRelativeCommandCommand(sublime_plugin.TextCommand):
         return bool(self.view.file_name() and len(self.view.file_name()) > 0)
 
     def language_settings(self, name):
-        languages = self.get_setting('languages')
+        languages = self.get_setting()
 
         if not languages or name not in languages:
             return None
@@ -58,31 +58,25 @@ class CopyRelativeCommandCommand(sublime_plugin.TextCommand):
         return syntax.name.lower()
 
     def __load_settings(self):
-        project_data = sublime.active_window().project_data()
-        project_settings = {}
+        project_settings = self.view.settings().get('Copy Relative Command')
+        settings = sublime.load_settings("Copy Relative Command.sublime-settings").get('languages')
 
-        if 'CopyRelativeCommand' in project_data:
-            project_settings = project_data['CopyRelativeCommand']
-
-        settings = sublime.load_settings("CopyRelativeCommand.sublime-settings")
-
-        if 'languages' not in project_settings:
+        if project_settings == None:
             return settings
 
-        temp_languages = settings.get('languages')
-        project_languages = project_settings['languages']
+        project_settings = project_settings.get('languages')
+
+        if project_settings == None:
+            return settings
 
         # merge the language settings, favouring project settings
-        for key in project_languages:
-            temp_languages[key] = project_languages[key]
-
-        settings.set('languages', temp_languages)
+        for key in project_settings:
+            settings[key] = project_settings[key]
 
         return settings
 
-    def get_setting(self, setting_name, default_value=None):
-        settings = self.__load_settings()
-        return settings.get(setting_name, default_value)
+    def get_setting(self):
+        return self.__load_settings()
 
     def get_current_function_or_class(self):
         current_function = self.get_current_function()
