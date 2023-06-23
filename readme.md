@@ -47,6 +47,15 @@ Within terminal:
         - `php -l app/Http/Controllers/UserController.php`
 4. That's it! Add your own configurations for language commands 👌️
 
+### Add a key binding 🔑️
+
+To add a key binding, open "Preferences / Key Bindings - User" and add:
+```jsonc
+// Copy Relative Command
+{ "keys": ["alt+c", "alt+c"], "command": "copy_relative_command" }
+```
+With this setting pressing `alt + c + c` will copy the configured relative command to your system clipboard
+
 ## Settings 👨‍💻️
 
 <table>
@@ -89,7 +98,7 @@ Within terminal:
     - edit existing project settings "Project: Edit Project"
     - create new project settings "Project: Save As"
 - Add the same settings as you would in your general settings under the `Copy Relative Command` key
-```
+```json
 {
     "folders":
     [
