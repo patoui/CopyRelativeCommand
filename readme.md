@@ -50,8 +50,7 @@ Within terminal:
 ### Add a key binding 🔑️
 
 To add a key binding, open "Preferences / Key Bindings - User" and add:
-```jsonc
-// Copy Relative Command
+```json
 { "keys": ["alt+c", "alt+c"], "command": "copy_relative_command" }
 ```
 With this setting pressing `alt + c + c` will copy the configured relative command to your system clipboard
